@@ -27,6 +27,11 @@ import {
 } from "../../../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import MapScreen from "../map/screens/map.screen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import TimelineScreen from "../timeline/screens/Timeline.screen";
+import GamezoneScreen from "../Gamezone/screens/Gamezone.screen";
+import HomeScreen from "../Home/screens/Home.screen";
+import ChapelScreen from "../chapel/screens/Chapel.screen";
 
 export default function Navigation({
   colorScheme,
@@ -54,7 +59,7 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator}
+        component={DrawerNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -121,6 +126,21 @@ function BottomTabNavigator() {
   );
 }
 
+const Drawer = createDrawerNavigator<RootTabParamList>();
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator initialRouteName="Timeline">
+      <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Screen name="Chapel" component={ChapelScreen} />
+      <Drawer.Screen name="Map" component={MapScreen} />
+      <Drawer.Screen name="GameZone" component={GamezoneScreen} />
+      <Drawer.Screen name="Timeline" component={TimelineScreen} />
+      {/* <Drawer.Screen name="About" component={AboutScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} /> */}
+    </Drawer.Navigator>
+  );
+}
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
