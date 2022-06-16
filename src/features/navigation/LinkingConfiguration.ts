@@ -15,7 +15,16 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          Timeline: "Timeline",
+          Timeline: "timeline",
+          Home: "/",
+          Chapel: "chapel",
+          Gallery: "gallery",
+          GameZone: "gamezone",
+          Map: "map",
+          PlaceDetail: "place-detail",
+
+          MainStage: "mainstage",
+          SmallStage: "smallstage",
         },
       },
       Modal: "modal",

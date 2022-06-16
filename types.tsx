@@ -35,6 +35,7 @@ export type RootTabParamList = {
   Chapel: undefined;
   SmallStage: undefined;
   MainStage: undefined;
+
   Timeline: undefined;
   GameZone: undefined;
 };
