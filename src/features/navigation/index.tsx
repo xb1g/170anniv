@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   NavigationContainer,
@@ -78,59 +78,15 @@ function RootNavigator() {
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
-
-function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
-
-  return (
-    <BottomTab.Navigator
-      initialRouteName="TabOne"
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}
-    >
-      <BottomTab.Screen name="Map" component={MapScreen} />
-      {/* <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
-      />
-      <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      /> */}
-    </BottomTab.Navigator>
-  );
-}
 
 const Drawer = createDrawerNavigator<RootTabParamList>();
 
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="Timeline">
+    <Drawer.Navigator
+      initialRouteName="Home"
+      screenOptions={{ headerShown: false }}
+    >
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Chapel" component={ChapelScreen} />
       <Drawer.Screen name="Map" component={MapScreen} />
