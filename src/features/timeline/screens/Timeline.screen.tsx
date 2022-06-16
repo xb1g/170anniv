@@ -3,6 +3,7 @@ import { Image, Pressable } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { RootTabScreenProps } from "../../../../types";
 import { Text, View } from "../../../components/styles/Themed";
+import { Header } from "../../../components/utils/Header";
 import { BandData } from "../components/BandData.component";
 
 export default function TimelineScreen({
@@ -31,6 +32,7 @@ export default function TimelineScreen({
   ];
   return (
     <View style={{ flex: 1 }}>
+      <Header title="Timeline" navigation={navigation} />
       <FlatList
         data={timelineData}
         renderItem={({ item, index }) => {

@@ -15,8 +15,8 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          Timeline: "timeline",
           Home: "/",
+          Timeline: "timeline",
           Chapel: "chapel",
           Gallery: "gallery",
           GameZone: "gamezone",

@@ -10,14 +10,13 @@ export function MonoText(props: TextProps) {
 export function TitleText(props: TextProps) {
   return (
     <Text
-      size="header"
-      weight="bold"
       {...props}
       style={[
         {
-          marginTop: 20,
-          marginLeft: 20,
           // fontFamily: Fonts.Jost.bold,
+          fontSize: 36,
+          margin: 10,
+          fontWeight: "bold",
         },
         props.style,
       ]}
