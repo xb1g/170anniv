@@ -1,16 +1,19 @@
 import React from "react";
 import { Image, Pressable } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+import { RootTabScreenProps } from "../../../../types";
 import { Text, View } from "../../../components/Themed";
 
 function BandData({
   image,
   name,
   time,
+  navigation,
 }: {
   image: string;
   name: string;
   time: Date;
+  navigation: any;
 }) {
   console.log(new Date().getTime() > time.getTime());
   console.log(typeof time);
@@ -28,7 +31,7 @@ function BandData({
       >
         <Text>{time.toLocaleTimeString()}</Text>
       </View>
-      <Pressable onPress={() => console.log("pressed")}>
+      <Pressable onPress={() => navigation.toggleDrawer()}>
         <View
           darkColor="#333"
           style={{
@@ -52,7 +55,9 @@ function BandData({
     </View>
   );
 }
-export default function TimelineScreen() {
+export default function TimelineScreen({
+  navigation,
+}: RootTabScreenProps<"Timeline">) {
   const timelineData = [
     {
       name: "oasis",
@@ -79,7 +84,13 @@ export default function TimelineScreen() {
       <FlatList
         data={timelineData}
         renderItem={({ item, index }) => {
-          return <BandData {...item} key={item.name + index} />;
+          return (
+            <BandData
+              {...item}
+              navigation={navigation}
+              key={item.name + index}
+            />
+          );
         }}
       />
       <View
