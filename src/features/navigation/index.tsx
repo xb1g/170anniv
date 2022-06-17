@@ -90,7 +90,7 @@ function DrawerNavigator() {
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Chapel" component={ChapelScreen} />
       <Drawer.Screen name="Map" component={MapScreen} />
-      <Drawer.Screen name="GameZone" component={GamezoneScreen} />
+      <Drawer.Screen name="Gamezone" component={GamezoneScreen} />
       <Drawer.Screen name="Timeline" component={TimelineScreen} />
       {/* <Drawer.Screen name="About" component={AboutScreen} />
       <Drawer.Screen name="Settings" component={SettingsScreen} /> */}

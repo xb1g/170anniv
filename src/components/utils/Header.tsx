@@ -13,9 +13,10 @@ export function Header({
   navigation: any;
 }) {
   return (
-    <View darkColor="#444">
+    <View darkColor="#262626">
       <CenteredRow>
         <IconButton
+          style={{ margin: 5, marginLeft: 10 }}
           name="menu"
           onPress={() => {
             navigation.toggleDrawer();

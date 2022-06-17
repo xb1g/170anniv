@@ -37,7 +37,7 @@ export type RootTabParamList = {
   MainStage: undefined;
 
   Timeline: undefined;
-  GameZone: undefined;
+  Gamezone: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
