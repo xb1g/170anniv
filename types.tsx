@@ -37,6 +37,9 @@ export type RootTabParamList = {
   MainStage: undefined;
 
   Timeline: undefined;
+  BandDetail: {
+    band: BandData;
+  };
   GameZone: undefined;
 };
 
@@ -45,3 +48,11 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
   >;
+
+export type BandData = {
+  name: string;
+  detail: string;
+  images: string[];
+  facebook: string;
+  instagram: string;
+};

@@ -22,7 +22,7 @@ const linking: LinkingOptions<RootStackParamList> = {
           GameZone: "gamezone",
           Map: "map",
           PlaceDetail: "place-detail",
-
+          BandDetail: "band-detail",
           MainStage: "mainstage",
           SmallStage: "smallstage",
         },
