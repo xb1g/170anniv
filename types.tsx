@@ -43,9 +43,22 @@ export type RootTabParamList = {
   GameZone: undefined;
 };
 
+export type TimelineParamList = {
+  Timeline: undefined;
+  Band: {
+    name: string;
+  };
+};
+
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
   CompositeScreenProps<
     BottomTabScreenProps<RootTabParamList, Screen>,
+    NativeStackScreenProps<RootStackParamList>
+  >;
+
+export type TimelineScreenProps<Screen extends keyof TimelineParamList> =
+  CompositeScreenProps<
+    BottomTabScreenProps<TimelineParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
   >;
 
@@ -55,4 +68,18 @@ export type BandData = {
   images: string[];
   facebook: string;
   instagram: string;
+};
+
+export type Game = {
+  name: string;
+  detail: string;
+  images: string[];
+
+  gameName: string;
+  gameDetail: string;
+};
+
+export type chapelShow = {
+  name: string;
+  detail: string;
 };

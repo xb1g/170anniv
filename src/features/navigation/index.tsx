@@ -24,6 +24,7 @@ import {
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
+  TimelineParamList,
 } from "../../../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import MapScreen from "../map/screens/map.screen";
@@ -32,6 +33,7 @@ import TimelineScreen from "../timeline/screens/Timeline.screen";
 import GamezoneScreen from "../Gamezone/screens/Gamezone.screen";
 import HomeScreen from "../Home/screens/Home.screen";
 import ChapelScreen from "../chapel/screens/Chapel.screen";
+import BandScreen from "../timeline/screens/Band.screen";
 
 export default function Navigation({
   colorScheme,
@@ -91,10 +93,29 @@ function DrawerNavigator() {
       <Drawer.Screen name="Chapel" component={ChapelScreen} />
       <Drawer.Screen name="Map" component={MapScreen} />
       <Drawer.Screen name="Gamezone" component={GamezoneScreen} />
-      <Drawer.Screen name="Timeline" component={TimelineScreen} />
+      <Drawer.Screen name="Timeline" component={TimelineNavigator} />
       {/* <Drawer.Screen name="About" component={AboutScreen} />
       <Drawer.Screen name="Settings" component={SettingsScreen} /> */}
     </Drawer.Navigator>
+  );
+}
+
+const TimelineStack = createNativeStackNavigator<TimelineParamList>();
+
+function TimelineNavigator() {
+  return (
+    <TimelineStack.Navigator>
+      <TimelineStack.Screen
+        name="Timeline"
+        component={TimelineScreen}
+        options={{ headerShown: false }}
+      />
+      <TimelineStack.Screen
+        name="Band"
+        component={BandScreen}
+        options={{ headerShown: false }}
+      />
+    </TimelineStack.Navigator>
   );
 }
 /**

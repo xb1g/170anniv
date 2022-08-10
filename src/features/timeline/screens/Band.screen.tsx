@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Image } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import { RootTabScreenProps } from "../../../../types";
+import { RootTabScreenProps, TimelineScreenProps } from "../../../../types";
 import { Text, View } from "../../../components/Themed";
+import { AllContext } from "../../../contexts/AllContext";
 
 export default function BandScreen({
   navigation,
   route,
-}: RootTabScreenProps<"BandDetail">) {
+}: TimelineScreenProps<"Band">) {
+  const { name } = route.params;
+  const { smallBands } = useContext(AllContext);
+  const [band, setBand] = React.useState(
+    smallBands.find((b) => b.name === name)
+  );
   return (
     <View style={{ flex: 1 }}>
       <FlatList
-        data={images}
+        data={band?.images}
         renderItem={() => {
           return (
             <Image

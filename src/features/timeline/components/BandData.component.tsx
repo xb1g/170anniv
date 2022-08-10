@@ -28,7 +28,13 @@ export function BandData({
       >
         <Text>{time.toLocaleTimeString()}</Text>
       </View>
-      <Pressable onPress={() => navigation.toggleDrawer()}>
+      <Pressable
+        onPress={() =>
+          navigation.navigate("Band", {
+            name,
+          })
+        }
+      >
         <View
           darkColor="#333"
           style={{

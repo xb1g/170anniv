@@ -9,16 +9,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<"Home">) {
   return (
     <>
       <Header title="Home" navigation={navigation} />
-      <View style={{ flex: 1, flexDirection: "row-reverse" }}>
-        {/* <SafeTop /> */}
-        <>
-          <Text>asdas</Text>
-          <Text>asdas</Text>
-          <Text>asdas</Text>
-          <View style={{ flexDirection: "row-reverse" }}>
-            <Text>asdas</Text>
-          </View>
-        </>
+      <View style={{ flex: 1 }}>
         <Text>hom3.screen</Text>
       </View>
     </>

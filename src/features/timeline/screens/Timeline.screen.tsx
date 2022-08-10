@@ -22,7 +22,6 @@ export default function TimelineScreen({
         "https://i.pinimg.com/736x/39/c6/95/39c695052462765ae5148cb8a8ce10b1.jpg",
       time: new Date("2022-06-16T16:30:51.01"),
     },
-
     {
       name: "oasis",
       image:
